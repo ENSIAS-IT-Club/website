@@ -41,14 +41,11 @@ body {
   color: white !important;
 }
 
-.navbar-nav .nav-item a:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
 .nav-item .dropdown-menu.show {
   margin-top: 21px;
   border-radius: 0;
   background-color: black;
+  box-shadow: 0 0 6px white;
 }
 
 .nav-item .dropdown-menu .dropdown-item:hover {
@@ -60,6 +57,77 @@ body {
 .collapsing.navbar-collapse .nav-item .dropdown-menu.show {
   margin-top: 0;
   text-align: center;
+}
+
+.nav-item .dropdown-toggle::after {
+  border: none !important;
+}
+
+.nav-item .top-caret {
+  position: absolute;
+  top: -15px;
+  color: white;
+}
+
+.nav-item .bottom-caret {
+  position: absolute;
+  bottom: -15px;
+  color: white;
+}
+
+.nav-item:hover::before,
+.nav-item:focus::before {
+  content: "";
+  color: white;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-bottom: 0;
+  border-left: 5px solid transparent;
+  position: absolute;
+  top: 15px;
+}
+
+.nav-item.dropdown:hover::before,
+.nav-item.dropdown:focus::before {
+  content: "";
+  color: white;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-bottom: 0;
+  border-left: 5px solid transparent;
+  position: absolute;
+  top: -8px;
+}
+
+.nav-item:hover::after,
+.nav-item:focus::after {
+  content: "";
+  color: white;
+  border-top: 0;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+  position: absolute;
+  bottom: 15px;
+}
+
+.nav-item.dropdown:hover::after,
+.nav-item.dropdown:focus::after {
+  content: "";
+  color: white;
+  border-top: 0;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+  position: absolute;
+  bottom: -8px;
+}
+
+.collapse.navbar-collapse.show .nav-item:hover::after,
+.collapse.navbar-collapse.show .nav-item:hover::before,
+.collapsing.navbar-collapse .nav-item:hover::before,
+.collapsing.navbar-collapse .nav-item:hover::after {
+  border: none;
 }
 
 /* Navbar end */
